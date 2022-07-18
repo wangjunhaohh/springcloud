@@ -1,0 +1,24 @@
+server:
+  port: 3344
+
+
+
+spring:
+  application:
+    name: springcloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/wangjunhaohh/springcloud-config.git
+          password: wjh20010725
+          username: wangjunhaohh
+        native:
+          search-locations: D:\javaweb\springcloud\springcloud-config-3344\src\main\resources\configCenter
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/,http://eureka3:7003/eureka/
+
+

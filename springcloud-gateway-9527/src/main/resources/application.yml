@@ -1,0 +1,35 @@
+server:
+  port: 9527
+
+
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: springcloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从服务注册中心动态创建路由的功能，利用服务名进行路由
+      routes:
+        - id: dept-8002-get
+          uri: lb://springcloud-provide-dept
+          predicates:
+            - Path=/dept/get/**
+            - After=2022-07-13T17:39:47.311417500+08:00[GMT+08:00]
+        - id: dept-8002-get2
+          uri: lb://springcloud-provide-dept
+          predicates:
+            - Path=/dept/list
+
+eureka:
+  instance:
+    hostname: springcloud-gateway-9527
+  client:
+    service-url:
+      register-with-eureka: true
+      defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/,http://eureka3:7003/eureka/
+      fetch-registry: true
+

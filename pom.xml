@@ -14,6 +14,9 @@
         <module>springcloud-provide-dept-8004</module>
         <module>springcloud-provide-dept-hystrix-8001</module>
         <module>springcloud-consumer-dept-dashBoard-9001</module>
+        <module>springcloud-gateway-9527</module>
+        <module>springcloud-config-3344</module>
+        <module>springcloud-config-start-3355</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

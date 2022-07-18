@@ -17,32 +17,18 @@ spring:
     username: root
     password: 123456
 
-
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-
-
 eureka:
   client:
     service-url:
       defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/,http://eureka3:7003/eureka/
   instance:
-    prefer-ip-address: true
-    instance-id: springcloud-provide-dept-hystrix-8001
+    instance-id: springcloud-provide-dept8001
 
 info:
   app.name: springcloud
   company.name: www.wjh.com
-
-
-hystrix:
-  command:
-    default:
-      circuitBreaker:
-        sleepWindowInMilliseconds: 10000
-        enabled: true
-        requestVolumeThreshold: 10
-        errorThresholdPercentage: 60
